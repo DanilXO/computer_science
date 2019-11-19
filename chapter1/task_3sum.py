@@ -17,12 +17,21 @@ A solution set is:
 
 OUTPUT:
 """
+from itertools import combinations
 from typing import List
 
 
 def three_sum(nums: List[int]) -> List[int]:
-    pass
+    hashmap = {}
+    for i, value in enumerate(nums):
+        hashmap[i] = value
+        target = -value
+        for first_index, value in hashmap.items():
+            if target - value in nums:
+                second_index = nums.index(target - value)
+                if first_index != second_index:
+                    return [first_index, second_index]
 
 
 if __name__ == '__main__':
-    three_sum([-1, 0, 1, 2, -1, -4])
+    print(three_sum([-1, 0, 1, 2, -1, -4]))

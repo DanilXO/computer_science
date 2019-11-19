@@ -19,11 +19,11 @@ from typing import List
 
 
 def two_sum(nums: List[int], target: int) -> List[int]:
-    hash_table = {}
+    hashmap = {}
     for i, value in enumerate(nums):
-        hash_table[i] = value
+        hashmap[i] = value
 
-    for first_index, value in hash_table.items():
+    for first_index, value in hashmap.items():
         if target - value in nums:
             second_index = nums.index(target - value)
             if first_index != second_index:
